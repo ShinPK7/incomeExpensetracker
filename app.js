@@ -12,6 +12,7 @@ const expenseRoutes =require("./routes/expense");
 const {createTableWithSeed } = require("./models/database");
 
 const app = express();
+const PORT = 3000;
 createTableWithSeed();
 app.set('view engine', "ejs");
 app.set("views", "views");
@@ -25,7 +26,7 @@ app.use(incomeRoutes);
 app.use(summaryRoutes);
 app.use(expenseRoutes);
 
-app.listen(process.eventNames.PORT || PORT, function(){
+app.listen(process.env.PORT || PORT, function(){
     console.log(
         `Income Exprnse Tracker app is running on >>>
      ${chalk.blue("http://localhost:3000"
