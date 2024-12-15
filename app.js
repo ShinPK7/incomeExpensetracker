@@ -1,7 +1,8 @@
 const path = require("path");
 const express = require("express");
 const chalk = require("chalk");
-const {createTableWithSeed} = require ()
+
+
 
 
 const homeRoutes = require("./routes/home");
@@ -12,7 +13,8 @@ const expenseRoutes =require("./routes/expense");
 const {createTableWithSeed } = require("./models/database");
 
 const app = express();
-const PORT = 3000;
+const PORT= 3000;
+
 createTableWithSeed();
 app.set('view engine', "ejs");
 app.set("views", "views");
